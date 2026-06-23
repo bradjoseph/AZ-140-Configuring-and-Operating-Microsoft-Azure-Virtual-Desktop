@@ -118,24 +118,28 @@ The main tasks for this exercise are as follows:
     ```powershell
     $jsonContent = @"
     {
-      "Name": "Desktop Virtualization Image Creator (random)",
+      "Name": "Desktop Virtualization Image Creator (xxxxxxxxx)",
       "IsCustom": true,
       "Description": "Create custom image templates for Azure Virtual Desktop images.",
+      "Permissions": [
+      {
       "Actions": [
-        "Microsoft.Compute/galleries/read",
-        "Microsoft.Compute/galleries/images/read",
-        "Microsoft.Compute/galleries/images/versions/read",
-        "Microsoft.Compute/galleries/images/versions/write",
-        "Microsoft.Compute/images/write",
-        "Microsoft.Compute/images/read",
-        "Microsoft.Compute/images/delete"
+      "Microsoft.Compute/galleries/read",
+      "Microsoft.Compute/galleries/images/read",
+      "Microsoft.Compute/galleries/images/versions/read",
+      "Microsoft.Compute/galleries/images/versions/write",
+      "Microsoft.Compute/images/read",
+      "Microsoft.Compute/images/write",
+      "Microsoft.Compute/images/delete"
       ],
       "NotActions": [],
       "DataActions": [],
-      "NotDataActions": [],
+      "NotDataActions": []
+      }
+      ],
       "AssignableScopes": [
-        "/subscriptions/$subscriptionId",
-        "/subscriptions/$subscriptionId/resourceGroups/az140-15b-RG"
+      "/subscriptions/$subscriptionId",
+      "/subscriptions/$subscriptionId/resourceGroups/az140-15b-RG"
       ]
     }
     "@
